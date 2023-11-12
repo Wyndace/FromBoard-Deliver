@@ -1,0 +1,20 @@
+---
+const { id, label, placeholder, name, type, class: className, ...rest } = Astro.props
+---
+
+<div class={className + " flex flex-col gap-2"}>
+  <input
+    type={type}
+    id={id}
+    placeholder={placeholder}
+    name={name}
+    class={"text-gray-900 border-gray-900 border-2 text-base font-formular " +
+      "leading-normal rounded p-3 placeholder:text-gray-400 focus:text-purple-500 focus:border-purple-500 outline-none"}
+  />
+  <label
+    for={id}
+    class="hidden"
+  >
+    {label}
+  </label>
+</div>
