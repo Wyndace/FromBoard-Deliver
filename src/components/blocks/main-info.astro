@@ -1,0 +1,27 @@
+---
+const { class: className, ...rest } = Astro.props
+import { Picture } from "astro:assets"
+import packing from "../../assets/images/packing.png"
+---
+
+<div class={className + " flex gap-4 flex-col"}>
+  <div class="flex gap-3 flex-col">
+    <h1 class="text-gray-900 font-formular text-4xl font-black leading-10">
+      Без проблемная доставка купленных вещей из&nbsp;США, Европы и&nbsp;Азии
+      в&nbsp;Россию
+    </h1>
+    <p class="text-gray-900 font-formular text-xl leading-7">
+      Сэкономьте на&nbsp;покупках и&nbsp;наслаждайтесь мировыми
+      брендами&nbsp;&mdash; наш сервис позволяет вам легко и&nbsp;удобно
+      заказывать товары со&nbsp;всего мира и&nbsp;получать их&nbsp;в&nbsp;России
+    </p>
+  </div>
+  <Picture
+    class="rounded-2xl"
+    src={packing}
+    formats={["webp"]}
+    alt="Иллюстрация упаковки товаров из зарубежа"
+    width={"756"}
+    height={"352"}
+  />
+</div>
