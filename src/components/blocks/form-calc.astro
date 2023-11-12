@@ -1,0 +1,84 @@
+---
+const { class: className, ...rest } = Astro.props
+import TextInput  from "../utils/text-input.astro"
+import Btn from "../utils/btn.astro"
+---
+
+<form
+  method="POST"
+  action="/api/sendmail"
+  name="calc"
+  class={className +
+    " bg-gray-50 h-full rounded-2xl gap-7 px-7 py-6 flex flex-col items-center"}
+>
+  <div class="flex flex-col gap-4 col-span-6 items-center">
+    <h2 class="font-formular font-bold text-gray-900 text-3xl leading-9">
+      Калькулятор доставки
+    </h2>
+    <p
+      class="text-gray-900 text-base font-normal font-formular leading-normal max-w-[358px] text-center"
+    >
+      Посчитайте, сколько будет стоить перевозка покупки из&nbsp;зарубежа
+    </p>
+  </div>
+  <fieldset class="grid grid-cols-[repeat(4,_106px)] gap-6">
+    <legend class="hidden">
+      Форма обратной заявки -- Калькулятор доставки
+    </legend>
+    <TextInput type="text"
+      id="name"
+      placeholder="Имя"
+      name="name"
+      class="col-span-4"
+    />
+      <TextInput type="text"
+        id="email"
+        placeholder="Почта"
+        name="email"
+        class="col-span-2"
+      />
+      <TextInput type="text"
+        id="phone"
+        placeholder="Телефон"
+        name="phone"
+        class="col-span-2"
+      />
+      <TextInput type="number"
+        id="square"
+        placeholder="Общая площадь, м&sup2;"
+        name="square"
+        class="col-span-2"
+      />
+      <TextInput type="number"
+        id="weight"
+        placeholder="Вес, кг"
+        name="weight"
+        class="col-span-2"
+      />
+      <TextInput type="text"
+        id="buyCountry"
+        placeholder="Страна покупки"
+        name="buyCountry"
+        class="col-span-2"
+      />
+      <TextInput type="text"
+        id="buyCity"
+        placeholder="Город покупки"
+        name="buyCity"
+        class="col-span-2"
+      />
+      <TextInput type="text"
+        id="russianRegion"
+        placeholder="Область доставки"
+        name="russianRegion"
+        class="col-span-2"
+      />
+      <TextInput type="text"
+        id="russianCity"
+        placeholder="Город доставки"
+        name="russianCity"
+        class="col-span-2"
+      />
+   <Btn class="col-span-4" text="Заказать расчёт"/> 
+  </fieldset>
+</form>
